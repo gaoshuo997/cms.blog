@@ -1,0 +1,13 @@
+spring:
+  profiles:
+    active: vm
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**Mapper.xml
+file:
+  upload:
+    dir: ${user.dir}/upload
+im:
+  server:
+    port: 9326
+server:
+  port: 9091
