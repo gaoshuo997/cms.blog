@@ -4,7 +4,10 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.example.common.lang.Result;
 import com.example.entity.Post;
+import com.example.service.PostService;
+import com.example.service.SearchService;
 import com.example.vo.PostVo;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.Assert;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,8 +16,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 @RequestMapping("/admin")
-public class AdminController extends BaseController {
+public class AdminController {
 
+    @Autowired
+    private PostService postService;
+    @Autowired
+    private SearchService searchService;
     /**
      *
      * @param id

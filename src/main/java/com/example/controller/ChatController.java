@@ -4,6 +4,8 @@ import cn.hutool.core.map.MapUtil;
 import com.example.common.lang.Consts;
 import com.example.common.lang.Result;
 import com.example.im.vo.ImUser;
+import com.example.service.ChatService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,7 +16,10 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/chat")
-public class ChatController extends BaseController {
+public class ChatController {
+
+    @Autowired
+    private ChatService chatService;
 
     @GetMapping("/getMineAndGroupData")
     public Result getMineAndGroupData() {
